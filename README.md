@@ -91,3 +91,10 @@ kubernetes-the-hard-way-homelab/
 ├── scripts/
 ├── screenshots/
 └── troubleshooting/
+
+---
+
+# Additional Notes
+
+The IP Addresses shown in this readme and throughout this repository are all generic. As well as the VLAN numbers being obscured.
+I advise anyone else who attempts this or pushes to public repos to keep security in mind and keep your secrets to yourself!
