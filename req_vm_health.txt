@@ -1,0 +1,7 @@
+To successfully accomplish creating the script and running the script from a Windows or Linux machine, make sure to download the following:
+  -Python (https://www.python.org/downloads/)
+    1. Create a directory for your project.
+    2. Create virtual environment "python -m venv .venv"
+    3. Activate the environment ".venv\scripts\activate"
+    4. Install VMware SDK "pip install pyvmomi
+    5. Create scripts and secure.
