@@ -1,0 +1,70 @@
+# Secrets / env files
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.csr
+id_rsa
+id_ed25519
+*.kubeconfig
+kubeconfig
+config
+
+# Kubernetes secrets/configs
+*-secret.yaml
+*secret*.yaml
+secrets.yaml
+secrets/
+.kube/
+kubeconfig*
+admin.conf
+controller-manager.conf
+scheduler.conf
+kubelet.conf
+
+# VMware / ESXi / vCenter
+*.vmx
+*.vmdk
+*.nvram
+*.vmsd
+*.vmsn
+*.vmss
+*.ova
+*.ovf
+*.mf
+vcsa*.json
+vcenter*.json
+esxi*.json
+vmware-*.json
+govc.env
+powercli*.xml
+
+# Terraform / Ansible sensitive files
+terraform.tfstate
+terraform.tfstate.*
+.terraform/
+*.tfvars
+*.auto.tfvars
+vault.yml
+vault.yaml
+*.vault
+ansible.cfg
+inventory.ini
+inventory.yml
+hosts.ini
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# IDE / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

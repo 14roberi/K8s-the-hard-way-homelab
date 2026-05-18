@@ -1,0 +1,13 @@
+To successfully accomplish creating the script and running the script from a Windows or Linux machine, make sure to download the following:
+  -Python (https://www.python.org/downloads/)
+    1. Create a directory for your project.
+    2. Create virtual environment "python -m venv .venv"
+    3. Activate the environment ".venv\scripts\activate"
+    4. Install VMware SDK "pip install pyvmomi"
+    5. Create scripts and secure.
+  -VMware ESXi
+    1. Under the Host Permissions create a new user that has Read-Only access and propogate that down to children.
+    2. Denote that account for all machines, as it will be needed for your .env file that will be used in conjuction with the python script.
+      In my script It shows just one set of host/credential info, for multiple machines you need multiple entries in the .env file one for
+      each system.
+    3. Also denote your IP info for all machines by running "ip addr" (Most Newer Linux Distros).
