@@ -1,3 +1,7 @@
+## This is a basic health check script designed to check the health of VMs in inventory on VMware ESXi.
+## Note that credentials will need to be provided in an .env file, an example can be found in this same scripts repo.
+## This script checks VM power status, VMware Tools Status, CPU Usage, and Memory Usage. Enjoy!
+
 from pyVim.connect import SmartConnect, Disconnect
 from pyVmomi import vim 
 from dotenv import load_dotenv
