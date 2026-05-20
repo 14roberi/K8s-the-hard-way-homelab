@@ -1,0 +1,60 @@
+---
+- name: Basic network diagnostics
+  hosts: k8s
+  gather_facts: true
+
+  vars:
+    traceroute_target: "192.168.1.1"
+
+  tasks:
+
+    - name: Get hostname
+      command: hostname
+      register: hostname_result
+      changed_when: false
+
+    - name: Get primary IP
+      command: hostname -I
+      register: ip_result
+      changed_when: false
+
+    - name: Get routing table
+      command: ip route
+      register: route_result
+      changed_when: false
+
+    - name: Get DNS servers
+      command: cat /etc/resolv.conf
+      register: dns_result
+      changed_when: false
+
+    - name: Run traceroute
+      command: traceroute {{ traceroute_target }}
+      register: traceroute_result
+      ignore_errors: true
+      changed_when: false
+
+    - name: Display formatted network report
+      debug:
+        msg:
+          - "\u001b[36m=======================================\u001b[0m"
+          - "\u001b[32mNETWORK REPORT FOR {{ inventory_hostname }}\u001b[0m"
+          - "\u001b[36m=======================================\u001b[0m"
+          - ""
+          - "\u001b[33mHostname:\u001b[0m"
+          - "  {{ hostname_result.stdout }}"
+          - ""
+          - "\u001b[33mPrimary IP:\u001b[0m"
+          - "  {{ ip_result.stdout }}"
+          - ""
+          - "\u001b[33mRouting Table:\u001b[0m"
+          - "  {{ route_result.stdout_lines }}"
+          - ""
+          - "\u001b[33mDNS Configuration:\u001b[0m"
+          - "  {{ dns_result.stdout_lines }}"
+          - ""
+          - "\u001b[33mTraceroute Target:\u001b[0m"
+          - "  {{ traceroute_target }}"
+          - ""
+          - "\u001b[33mTraceroute Results:\u001b[0m"
+          - "  {{ traceroute_result.stdout_lines | default(['Traceroute failed']) }}"
