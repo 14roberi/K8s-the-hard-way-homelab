@@ -55,6 +55,7 @@ vault.yaml
 *.vault
 ansible.cfg
 inventory.ini
+!inventory.ini.example
 inventory.yml
 hosts.ini
 
