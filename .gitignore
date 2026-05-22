@@ -54,6 +54,7 @@ vault.yml
 vault.yaml
 *.vault
 ansible.cfg
+!ansible.cfg.example
 inventory.ini
 !inventory.ini.example
 inventory.yml
