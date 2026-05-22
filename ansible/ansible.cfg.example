@@ -1,0 +1,55 @@
+[defaults]
+
+# Inventory location
+inventory = ./inventory/inventory.ini
+
+# Roles path
+roles_path = ./roles
+
+# Disable host key checking for lab environments
+host_key_checking = False
+
+# Disable retry files
+retry_files_enabled = False
+
+# Improve output readability
+stdout_callback = yaml
+
+# Parallelism
+forks = 10
+
+# Log file
+log_path = ./logs/ansible.log
+
+#Python interpreter discovery
+interpreter_python = auto_silent
+
+# Gather facts faster
+gathering = smart
+
+#Fact caching
+fact_caching = jsonfile
+fact_caching_connection = ./fact_cache
+fact_caching_timeout = 86400
+
+# Disable cosway
+nocows = 1
+
+[inventory]
+enable_plugins = ini
+
+[priviledge_escalation]
+become = True
+become_method = sudo
+become_ask_pass = False
+
+[ssh_connection]
+
+# Faster SSH performance
+pipelining = True
+
+# SSH timeout
+timeout = 30
+
+# Reuse SSH sessions
+ssh_args = -o ControlMaster=auto -o ControlPersist=60s
