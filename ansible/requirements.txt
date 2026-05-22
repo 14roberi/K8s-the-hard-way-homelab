@@ -1,0 +1,12 @@
+# Core Ansible
+ansible
+ansible-core
+
+# YAML handling
+PyYAML
+
+# JSON query support for Ansible
+jmespath
+
+# Netaddr support for IP filters
+netaddr
