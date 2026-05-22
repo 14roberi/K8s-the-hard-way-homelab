@@ -1,0 +1,9 @@
+[names of nodes]
+server ansible_host=x.x.x.x hostname=Server1.local
+node1 ansible_host=x.x.x.x hostname=node1.local
+node2 ansible_host=x.x.x.x hostname=node2.local
+## This would continue with as many systems as you will be running this playbook on ##
+
+[nodes:vars]
+ansible_user=username
+ansible_become=false
