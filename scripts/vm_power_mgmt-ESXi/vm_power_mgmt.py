@@ -1,3 +1,5 @@
+## NOTE, the "power off" option in this script is a hard shutdown not a graceful shutdown of the guest OS. I will be adding that feature momentarily ##
+
 import os
 import ssl
 from pathlib import Path
